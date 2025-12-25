@@ -13,10 +13,10 @@ class Clustering:
     """
     def __init__(self):
         
-        # Το αρχείο ../processed_datasets/ProcessedPoliceKillingUS.csv περιέχει τους καθαρούς αριθμούς και τα ποσοστά φόνων για τα έτη 2015 και 2016
-        # Το αρχείο ../processed_datasets/ProcessedPovertyUS.csv περιέχει τους καθαρούς αριθμούς και τα ποσοστά σε φτώχια για τα έτη 2015 και 2016
+        # The file ../processed_datasets/ProcessedPoliceKillingUS.csv contains the raw numbers and percentages of killings for the years 2015 and 2016
+        # The file ../processed_datasets/ProcessedPovertyUS.csv contains the raw numbers and percentages of poverty for the years 2015 and 2016
         
-        # Τα αρχεία με κατάληξη Avg_2015_2016 έχουν τα ποσοστά σε φτώχια και φόνων σε μέσο όρο των ετών 2015-2016
+        # Files with the extension Avg_2015_2016 contain the average poverty and homicide rates for the years 2015-2016
         
         # [Step 1] Load the processed datasets
         choice = 0
@@ -55,17 +55,17 @@ class Clustering:
         # [Step 3] Create log-transformed columns for poverty and killings
        
         if choice == 1 or choice == 2:
-            self.Joined['Log Poverty'] = self.Joined['Percent in Poverty'] # Ποσοστά σε φτώχια
-            self.Joined['Log Killings'] = self.Joined['percentage']        # Ποσοστά φόνων
+            self.Joined['Log Poverty'] = self.Joined['Percent in Poverty'] # Percentages in poverty
+            self.Joined['Log Killings'] = self.Joined['percentage']        # Murder rates
         elif choice == 3 or choice == 4:
-            self.Joined['Log Poverty'] = self.Joined['Number in Poverty'] # Αριθμοί σε φτώχια
-            self.Joined['Log Killings'] = self.Joined['count']            # Αριθμοί φόνων
+            self.Joined['Log Poverty'] = self.Joined['Number in Poverty'] # Numbers in poverty
+            self.Joined['Log Killings'] = self.Joined['count']            # Numbers of murders
         elif choice == 5 or choice == 6:
-            self.Joined['Log Poverty'] = np.log1p(self.Joined['Number in Poverty']) # Αριθμοί σε φτώχια , καθαροί αριθμοί με Λογαριθμική κανονικοποίηση
-            self.Joined['Log Killings'] = np.log1p(self.Joined['count'])            # Αριθμοί φόνων , καθαροί αριθμοί με Λογαριθμική κανονικοποίηση
+            self.Joined['Log Poverty'] = np.log1p(self.Joined['Number in Poverty']) # Numbers in poverty, raw numbers with logarithmic normalization
+            self.Joined['Log Killings'] = np.log1p(self.Joined['count'])            # Number of murders, net numbers with logarithmic normalization
         elif choice == 7:
-            self.Joined['Log Poverty'] = self.Joined['Percent in Poverty Avg'] # Ποσοστά σε φτώχια μέσος όρος 2015-2016
-            self.Joined['Log Killings'] = self.Joined['Avg Deaths in percentage'] # Ποσοστά φόνων μέσος όρος 2015-2016
+            self.Joined['Log Poverty'] = self.Joined['Percent in Poverty Avg'] # Poverty rates, average 2015-2016
+            self.Joined['Log Killings'] = self.Joined['Avg Deaths in percentage'] # Average murder rates 2015-2016
 
         # [Step 4] Select the features for clustering
         self.X = self.Joined[['Log Poverty', 'Log Killings']]
