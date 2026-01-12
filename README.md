@@ -313,3 +313,11 @@ cd US-Police-Killing-Search/src/jupyter
 - CSV files containing processed and merged datasets
 
 The analysis terminates after all clusters and evaluation metrics are displayed.
+
+---
+
+## Open the Documentation
+1. Navigate to the `docs/` directory
+2. Open the report corresponding to your preferred language:
+    - English: `Police-Killings-US.pdf`
+    - Greek: `Δολοφονίες-Αστυνομικών-ΗΠΑ.pdf`
