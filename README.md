@@ -63,7 +63,7 @@
 
 ---
 
-## Overview
+# Project Overview
 
 This project investigates the potential relationship between socio-economic factors—specifically unemployment and poverty rates and incidents of police killings across various U.S. states between 2015 and 2016
 
@@ -203,9 +203,9 @@ The analysis was conducted in **four distinct stages**, progressing from percent
 
 ---
 
-## Installation & Run Guide
+# Installation & Run Guide
 
-### Prerequisites
+## Prerequisites
 
 This project requires **Python 3** to be installed on your system.
 
@@ -227,7 +227,7 @@ Additionally, install the required Python libraries:
 pip install pandas numpy scikit-learn scipy matplotlib
 ```
 
-### Installation
+## Installation
 Clone the repository to your local machine:
 
 ```bash
@@ -246,7 +246,7 @@ datasets/
 processed_datasets/
 ```
 
-### Data Preprocessing
+## Data Preprocessing
 Before running the clustering experiments, preprocess the raw datasets:
 
 ```bash
@@ -277,7 +277,7 @@ The program outputs:
 - Silhouette Coefficient
 - Elbow Method plot for optimal k
 
-### Run Clustering (3 Datasets)
+## Run Clustering (3 Datasets)
 Execute clustering with Police Killings, Poverty, and Population normalization:
 
 ```bash
@@ -289,7 +289,7 @@ This version:
 - Visualizes clusters and centroids
 - Reports SSE and Silhouette metrics
 
-### Jupyter Notebook Support
+## Jupyter Notebook Support
 All source files are also implemented as Jupyter Notebooks (.ipynb), allowing:
 - Interactive execution
 - Step-by-step analysis
@@ -307,7 +307,7 @@ Navigate to the project directory:
 cd US-Police-Killing-Search/src/jupyter
 ```
 
-### Output
+## Output
 - Cluster scatter plots with centroids
 - Quantitative clustering metrics (SSE, Silhouette Coefficient)
 - CSV files containing processed and merged datasets
